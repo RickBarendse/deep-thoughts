@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, } from '@apollo/client';
+//import { setContext } from '@apollo/cient/context';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -43,10 +43,10 @@ function App() {
                   path="/signup"
                   element={<Signup />}
                 />
-                {/* <Route path="/profile">
-                  <Route path=":username" element={<Profile />} />
-                  <Route path="" element={<Profile />} />
-                </Route> */}
+                {/* <Route path="/profile"> */}
+                  {/* <Route path=":username" element={<Profile />} /> */}
+                  {/* <Route path="" element={<Profile />} /> */}
+                {/* </Route> */}
                 <Route
                   path="/profile"
                   element={<Profile />}
