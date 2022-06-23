@@ -1,9 +1,11 @@
 import React from 'react';
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+
 import Home from './pages/Home';
 import Login from './pages/Login';
 import NoMatch from './pages/NoMatch';
@@ -41,10 +43,14 @@ function App() {
                   path="/signup"
                   element={<Signup />}
                 />
-                <Route path="/profile">
+                {/* <Route path="/profile">
                   <Route path=":username" element={<Profile />} />
                   <Route path="" element={<Profile />} />
-                </Route>
+                </Route> */}
+                <Route
+                  path="/profile"
+                  element={<Profile />}
+                />
                 <Route
                   path="/thought/:id"
                   element={<SingleThought />}
