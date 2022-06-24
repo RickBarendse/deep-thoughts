@@ -13,7 +13,6 @@ import Auth from '../utils/auth';
 const Profile = (props) => {
   const { username: userParam } = useParams();
   const [addFriend] = useMutation(ADD_FRIEND);
-  console.log("we are here")
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
@@ -54,9 +53,11 @@ const Profile = (props) => {
           Viewing {userParam ? `${user.username}'s` : 'your'} profile.
         </h2>
 
+      {userParam && (
         <button className="btn ml-auto" onClick={handleClick}>
           Add Friend
         </button>
+      )}
       </div>
 
       <div className="flex-row justify-space-between mb-3">
