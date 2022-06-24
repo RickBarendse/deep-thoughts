@@ -55,12 +55,12 @@ function App() {
                 />
                 <Route path="/profile">
                   <Route path=":username" element={<Profile />} />
-                  <Route path="" element={<Profile />} />
+                  <Route path="/profile" element={<Profile />} />
                 </Route>
                 {/* <Route
                   path="/profile"
-                  element={<Profile />} */}
-                {/* /> */}
+                  element={<Profile />}
+                /> */}
                 <Route
                   path="/thought/:id"
                   element={<SingleThought />}

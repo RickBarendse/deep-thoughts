@@ -1,18 +1,21 @@
 import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
-import { ADD_FRIEND } from '../utils/mutations';
 
+
+import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
 import FriendList from '../components/FriendList';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { ADD_FRIEND } from '../utils/mutations';
 import Auth from '../utils/auth';
-import ThoughtForm from '../components/ThoughtForm';
+
 
 
 const Profile = (props) => {
   const { username: userParam } = useParams();
+
   const [addFriend] = useMutation(ADD_FRIEND);
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
@@ -20,6 +23,7 @@ const Profile = (props) => {
 
   const user = data?.me || data?.user || {};
   console.log(data)
+  
   // navigate to personal profile page if username is the logged-in user's
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile" />
