@@ -50,7 +50,7 @@ export const QUERY_USER = gql`
             thoughts {
                 _id
                 thoughtText
-                createAt
+                createdAt
                 reactionCount
             }
         }
