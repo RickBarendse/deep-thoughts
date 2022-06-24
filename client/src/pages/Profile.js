@@ -8,6 +8,7 @@ import FriendList from '../components/FriendList';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
+import ThoughtForm from '../components/ThoughtForm';
 
 
 const Profile = (props) => {
@@ -76,6 +77,7 @@ const Profile = (props) => {
           />
         </div>
       </div>
+      <div className="mb-3">{!userParam && <ThoughtForm />}</div>
     </div>  
   )
 };
